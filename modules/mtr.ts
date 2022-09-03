@@ -84,7 +84,7 @@ export default class MTR {
   cleanup($: cheerio.Root) {
     // get description from body
     const body = $("body");
-    this.mtrData.description = body.get(0).childNodes[0].data.trim() || "";
+    this.mtrData.description = body.get(0).childNodes[0].data?.trim() || "";
 
     // wrap standalone text nodes in p tags
     // @ts-ignore
@@ -165,7 +165,10 @@ export default class MTR {
     // @ts-ignore
     sectionContent
       .find("h4")
-      .replaceWith((i, e) => `<p>\n\n**${$(e).text().trim()}**\n\n</p>`);
+      .each((num, e) => {
+        const text = `<p>\n\n**${$(e).text().trim()}**\n\n</p>`;
+        return $(e).replaceWith(text);
+      });
 
     // clean up line breaks
     return sectionContent

@@ -10,7 +10,8 @@
     "strict": true,                                      /* Enable all strict type-checking options. */
     "moduleResolution": "node",
     "baseUrl": ".",
-    "sourceMap": true
+    "sourceMap": true,
+    "outDir": "build"
   },
   "compileOnSave": false,
   "exclude": [

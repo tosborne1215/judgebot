@@ -1,3 +1,5 @@
+import * as dotenv from "dotenv";
+dotenv.config();
 import log4js from "log4js";
 import request from "request";
 import chalk from "chalk";

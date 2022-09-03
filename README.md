@@ -20,8 +20,8 @@ export CR_ADDRESS="https://media.wizards.com/2020/downloads/MagicCompRules%20202
 export IPG_ADDRESS="https://raw.githubusercontent.com/hgarus/mtgdocs/master/docs/ipg.json"
 export MTR_ADDRESS="https://sites.google.com/site/mtgfamiliar/rules/MagicTournamentRules-light.html"
 npm run build
-node updateInteractions.js
-node server.js
+npm run updateInteractions
+npm run serve
 ```
 
 ## Badges
